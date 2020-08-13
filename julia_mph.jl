@@ -60,7 +60,7 @@ function calc_mph_chl(mph_0, mph_1, sipf, sicf, bair, ndvi, rmax_1, lambda_rmax_
 
     """
     Calculation of MPH CHL
-    Requires previously calculated parameters AND mph_floatthres and mph_cyanomax (high int64 values, can be derived from paper)
+    Requires previously calculated parameters AND mph_floatthres and mph_cyanomax (high values, see paper)
     Feel free to uncomment or delete print statements.
     """
 
@@ -144,4 +144,6 @@ mph_0, mph_1, sipf, sicf, bair, ndvi, rmax_1, lambda_rmax_1, lambda_rmax_0, rmax
 chl_mph, adj_flag, cyano_flag, float_flag = calc_mph_chl(mph_0, mph_1, sipf, sicf, bair, ndvi, rmax_1, lambda_rmax_1, lambda_rmax_0, rmax_0, 200, 350)
 
 println("MPH CHL is: " * string(chl_mph))
-println("Flags - Adj flag: " * string(adj_flag)* ", "* "Cyano Flag: " * string(cyano_flag) * ", "* "Float flag: " * string(floats_flag))
+# should be ~22.3
+println("Flags - Adj flag: " * string(adj_flag)* ", "* "Cyano Flag: " * string(cyano_flag) * ", "* "Float flag: " * string(float_flag))
+# should be: Flags - Adj flag: 0, Cyano Flag: 0, Float flag: 0
